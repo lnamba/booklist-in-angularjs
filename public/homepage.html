@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Booklist</h1>
+      <a ng-click="showform = !showform"><button class="btn btn-warning">New Book</button></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form ng-show="showform" ng-submit="$ctrl.addBook(book)">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" ng-model="$ctrl.book.title">
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" class="form-control" ng-model="$ctrl.book.author">
+        </div>
+        <div class="form-group">
+          <label for="image_url">Image URL</label>
+          <input type="text" class="form-control" ng-model="$ctrl.book.image_url">
+        </div>
+        <div class="form-group">
+          <label for="released">Released</label>
+          <input type="text" class="form-control" ng-model="$ctrl.book.released">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-warning"/>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" id="allbooks">
+
+    <div class="col-md-4" ng-repeat="book in $ctrl.books">
+      <books abook="book" deletebook="$ctrl.deletebook(book)" like="$ctrl.like(book)" dislike="$ctrl.dislike(book)"></books>
+    </div>
+
+  </div>
+
+</div>

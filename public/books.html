@@ -1,0 +1,20 @@
+
+<div class="thumbnail">
+  <img class="left" src="{{ $ctrl.abook.image_url }}">
+  <div class="caption">
+    <h3>{{ $ctrl.abook.title }}
+
+    </h3>
+    <h4>{{ $ctrl.abook.author }}</h4>
+    <p>{{ $ctrl.abook.released }}</p>
+  </div>
+
+  <a ui-sref="edit({id:$ctrl.abook.id})"><button class="btn btn-warning">Edit</button></a>
+  <a ng-click="$ctrl.deletebook({book:$ctrl.abook})"><button class="btn btn-warning">Delete</button></a>
+
+  <span ng-click="$ctrl.like({book:$ctrl.abook})" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"><span> {{ $ctrl.abook.likes }}</span></span>
+  <span ng-click="$ctrl.dislike({book:$ctrl.abook})" class="glyphicon glyphicon-thumbs-down" aria-hidden="true"><span> {{ $ctrl.abook.dislikes }}</span></span>
+
+  <a ui-sref="viewdetails({id:$ctrl.abook.id})"><button class="btn btn-warning">Details</button></a>
+
+</div>
